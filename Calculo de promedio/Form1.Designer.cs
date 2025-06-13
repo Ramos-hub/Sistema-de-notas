@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSistema));
             this.gbRegistro = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblError = new System.Windows.Forms.Label();
             this.txtNota3 = new System.Windows.Forms.TextBox();
             this.txtNota2 = new System.Windows.Forms.TextBox();
@@ -40,18 +41,17 @@
             this.lblNota1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gbAcciones = new System.Windows.Forms.GroupBox();
-            this.gbPromedio = new System.Windows.Forms.GroupBox();
-            this.txtPromedio = new System.Windows.Forms.TextBox();
-            this.lblPromedio = new System.Windows.Forms.Label();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnPromedio = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gbPromedio = new System.Windows.Forms.GroupBox();
+            this.txtPromedio = new System.Windows.Forms.TextBox();
+            this.lblPromedio = new System.Windows.Forms.Label();
             this.tlpAyuda = new System.Windows.Forms.ToolTip(this.components);
             this.gbRegistro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbAcciones.SuspendLayout();
             this.gbPromedio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbRegistro
@@ -73,6 +73,16 @@
             this.gbRegistro.TabIndex = 0;
             this.gbRegistro.TabStop = false;
             this.gbRegistro.Text = "Registro de Notas";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Calculo_de_promedio.Properties.Resources.icons8_usuario_100;
+            this.pictureBox1.Location = new System.Drawing.Point(411, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // lblError
             // 
@@ -158,6 +168,50 @@
             this.gbAcciones.TabStop = false;
             this.gbAcciones.Text = "Acciones";
             // 
+            // btnRegistro
+            // 
+            this.btnRegistro.BackColor = System.Drawing.Color.White;
+            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistro.Image = global::Calculo_de_promedio.Properties.Resources.icons8_escoba_50;
+            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistro.Location = new System.Drawing.Point(3, 113);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(234, 70);
+            this.btnRegistro.TabIndex = 2;
+            this.btnRegistro.Text = "Nuevo Registro";
+            this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSalir.Image = global::Calculo_de_promedio.Properties.Resources.icons8_salida_321;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(3, 201);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(234, 70);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnPromedio
+            // 
+            this.btnPromedio.BackColor = System.Drawing.Color.White;
+            this.btnPromedio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPromedio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPromedio.Image = global::Calculo_de_promedio.Properties.Resources.icons8_agregar_propiedad_32;
+            this.btnPromedio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPromedio.Location = new System.Drawing.Point(3, 22);
+            this.btnPromedio.Name = "btnPromedio";
+            this.btnPromedio.Size = new System.Drawing.Size(234, 68);
+            this.btnPromedio.TabIndex = 0;
+            this.btnPromedio.Text = "Agregar Promedio";
+            this.btnPromedio.UseVisualStyleBackColor = false;
+            this.btnPromedio.Click += new System.EventHandler(this.btnPromedio_Click);
+            // 
             // gbPromedio
             // 
             this.gbPromedio.Controls.Add(this.txtPromedio);
@@ -175,6 +229,7 @@
             // 
             this.txtPromedio.Location = new System.Drawing.Point(214, 63);
             this.txtPromedio.Name = "txtPromedio";
+            this.txtPromedio.ReadOnly = true;
             this.txtPromedio.Size = new System.Drawing.Size(380, 26);
             this.txtPromedio.TabIndex = 10;
             // 
@@ -186,57 +241,6 @@
             this.lblPromedio.Size = new System.Drawing.Size(172, 20);
             this.lblPromedio.TabIndex = 9;
             this.lblPromedio.Text = "Promedio Obtenido :";
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.BackColor = System.Drawing.Color.White;
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistro.Image = global::Calculo_de_promedio.Properties.Resources.icons8_escoba_50;
-            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistro.Location = new System.Drawing.Point(3, 113);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(234, 70);
-            this.btnRegistro.TabIndex = 2;
-            this.btnRegistro.Text = "Nuevo Registro";
-            this.btnRegistro.UseVisualStyleBackColor = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalir.Image = global::Calculo_de_promedio.Properties.Resources.icons8_salida_321;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(3, 201);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(234, 70);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            // 
-            // btnPromedio
-            // 
-            this.btnPromedio.BackColor = System.Drawing.Color.White;
-            this.btnPromedio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPromedio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPromedio.Image = global::Calculo_de_promedio.Properties.Resources.icons8_agregar_propiedad_32;
-            this.btnPromedio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPromedio.Location = new System.Drawing.Point(3, 22);
-            this.btnPromedio.Name = "btnPromedio";
-            this.btnPromedio.Size = new System.Drawing.Size(234, 68);
-            this.btnPromedio.TabIndex = 0;
-            this.btnPromedio.Text = "Agregar Promedio";
-            this.btnPromedio.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Calculo_de_promedio.Properties.Resources.icons8_usuario_100;
-            this.pictureBox1.Location = new System.Drawing.Point(411, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // tlpAyuda
             // 
@@ -259,10 +263,10 @@
             this.Text = "Sistema de notas ITR";
             this.gbRegistro.ResumeLayout(false);
             this.gbRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbAcciones.ResumeLayout(false);
             this.gbPromedio.ResumeLayout(false);
             this.gbPromedio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
